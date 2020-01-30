@@ -22,7 +22,7 @@ class Usuarios {
                 if(erro){
                     reject('Erro ao consultar' + erro)
                 }else{
-                    resolve(retorno)
+                    resolve(retorno[0])
                 }
             })
 
