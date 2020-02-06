@@ -63,7 +63,7 @@ module.exports = {
             res.status(404).send({erro: 'Série não encontrada!'})
             return
         }else{
-            res.send(retorno).send()
+            res.status(204).send()
         }
     },
 }
