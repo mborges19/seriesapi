@@ -3,10 +3,16 @@ const app = express()
 
 app.use(express.json())
 
-const auth = require('./routes/authRoutes')
+let alowCrossDomain = (req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*')
+    res.header('Access-Control-Allow-Headers', '*')
+    next()
+}
 
+const auth = require('./routes/authRoutes')
 const series = require('./routes/seriesRoutes')
 
+app.use(alowCrossDomain)
 app.use('/auth', auth)
 app.use('/series', series)
 
