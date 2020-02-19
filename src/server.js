@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const authMidd = require('./middlewares/auth')
 
 app.use(express.json())
 
@@ -15,6 +16,7 @@ const series = require('./routes/seriesRoutes')
 
 app.use(alowCrossDomain)
 app.use('/auth', auth)
+app.use(authMidd)
 app.use('/series', series)
 
 module.exports = app
