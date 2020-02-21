@@ -7,7 +7,7 @@ const authConfig = require('../config/auth')
 gerarToken = (params) => {
     // console.log(params)
     return jwt.sign(params, authConfig.secret, {
-        expiresIn: 120,
+        expiresIn: 900,
     })
 }
 module.exports = {
